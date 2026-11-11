@@ -1,6 +1,6 @@
 # 🎣 Phishing para captura de senhas
 
-> Este projeto tem como objetivo utilizar a ferramenta setoolkit para criar uma página falsa do Facebook para captura de senhas, com fins educacionais e defensivos.
+> Este projeto tem como objetivo utilizar a ferramenta setoolkit para criar uma página falsa para captura de senhas, com fins educacionais e defensivos.
 
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
 ![Licença](https://img.shields.io/badge/licença-MIT-blue)
@@ -27,22 +27,42 @@ Este projeto tem como objetivo estudar técnicas de phishing, auxiliando na cons
 
 ## 🐧 Script Shell (Kali Linux)
 
-Descrição do que o script faz (ex.: extrai URLs de um e-mail, verifica cabeçalhos, consulta reputação de domínios).
-
 ### Requisitos
 
-- Distribuição Linux (Ubuntu, Debian, Kali, etc.)
-- Bash 4.0+
-- Dependências: `curl`, `grep`, `whois`, `dig` *(ajuste conforme o seu script)*
+- Distribuição Linux Kali
+- Bash 5.3.9
+- Dependências: `setoolkit`
 
 ### Como executar
 
 ```bash
-# Dar permissão de execução
-chmod +x scripts/analise_phishing.sh
+# Entrar em modo root
+sudo su
 
-# Executar
-./scripts/analise_phishing.sh <arquivo_ou_url>
+# Executar ferramenta Setoolkit
+setoolkit
+
+#No menu que aparece selecionar a opção 1
+1) Social-Engineering Attacks
+
+#No menu seguinte selecionar opção 2
+2) Website Attack Vectors
+
+#No próximo Menu selecionar a opção 3
+3) Credential Harvester Attack Method
+
+#Logo após você escolher um site para clonar ou utilizar algum template existente.
+#Para esse senário terei que optar por um template existente pois a rede em que estou possui IPS e está barrando a clonagem então tive que deixar a VMs fora da rede.
+#Escolher Opção 1
+1) Web Templates
+
+#Em seguida você deve informar qual IP o servidor ira rodar. Por padrão o sistema já reconhece o IP da placa mas você pode configurar outro IP
+set:webattack> IP address for the POST back in Harvester/Tabnabbing [10.0.2.15]: 192.168.70.20
+
+#Depois você deve escolher entre os templates disponíveis que nesse caso iremos utilizar a página do Twitter.
+3. Twitter
+
+#Após processo acima a ferramenta ira subir um servidor com uma página falsa onde o usuário ira digitar as credenciais de acesso e o servidor ira capturar as informações em texto claro e mostrar no terminal.
 ```
 
 
@@ -52,50 +72,17 @@ chmod +x scripts/analise_phishing.sh
 
 | Ferramenta | Finalidade |
 |------------|------------|
-| `Bash` | Automação e execução dos scripts |
-| `curl` | Requisições HTTP para análise de URLs |
-| `whois` | Consulta de informações de registro de domínio |
-| `dig` / `nslookup` | Consultas DNS |
-| `grep` / `awk` / `sed` | Processamento e extração de dados |
-| `VirusTotal` | Verificação de reputação de URLs e arquivos |
-| `PhishTank` / `URLhaus` | Bases de dados de URLs maliciosas |
-| `Wireshark` | Análise de tráfego de rede *(opcional)* |
-| `Kali Linux` | Ambiente de testes *(opcional)* |
+| `setoolkit` | Framework para realização de pentest |
+| `Kali Linux` | Ambiente de testes |
 
-> Edite a tabela conforme as ferramentas realmente usadas no seu projeto.
 
 ---
 
 ## 📊 Resultados
 
-Apresente aqui os principais achados do projeto.
+<img width="737" height="159" alt="RESULTADO-PHISHING" src="https://github.com/user-attachments/assets/75a69b0c-c5db-40ef-875c-fead34161287" />
 
-### Resumo
-
-| Métrica | Valor |
-|---------|-------|
-| Amostras analisadas | 0 |
-| URLs suspeitas identificadas | 0 |
-| Domínios maliciosos detectados | 0 |
-| Taxa de detecção | 0% |
-
-### Principais conclusões
-
-- Conclusão 1
-- Conclusão 2
-- Conclusão 3
-
-### Evidências
-
-Inclua capturas de tela, gráficos ou saídas do script:
-
-```
-<exemplo de saída do script>
-```
-
-![Exemplo de resultado](docs/captura_resultado.png)
-
----
+-Como podemos ver na imagem no teste realizado a página clonada capturou as credenciais de acesso e exibiu em texto claro.
 
 ## 🛡️ Boas Práticas de Prevenção
 
@@ -119,8 +106,8 @@ Contribuições são bem-vindas! Faça um *fork* do projeto, crie uma branch e a
 |---|---|
 | **Nome** | João Vitor dos Santos Ferreira |
 | **E-mail** | joao.analista97@gmail.com |
-| **LinkedIn** | [linkedin.com/in/seu-perfil](https://www.linkedin.com/in/joão-vitor-dos-santos-ferreira-015064186/) |
-| **GitHub** | [github.com/seu-usuario](https://github.com/joaoanalista97-maker) |
+| **LinkedIn** | [linkedin/in/joão-vitor-dos-santos-ferreira-015064186](https://www.linkedin.com/in/joão-vitor-dos-santos-ferreira-015064186/) |
+| **GitHub** | [github.com/joaoanalista97-maker](https://github.com/joaoanalista97-maker) |
 
 ---
 
